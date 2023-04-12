@@ -1,5 +1,5 @@
 import { identityMatrix } from './src/apifunc/apifunc.js'
-import { Matrix } from './src/index.js'
+import { Matrix } from './src/matrix.js'
 
 export default {
     Matrix: Matrix,

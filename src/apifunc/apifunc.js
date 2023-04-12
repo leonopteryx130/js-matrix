@@ -1,4 +1,4 @@
-import { Matrix } from "../index.js"
+import { Matrix } from "../matrix.js"
 
 export function identityMatrix(n) {
     /*
