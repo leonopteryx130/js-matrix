@@ -1,3 +1,10 @@
 {
+    "name": "js-matrix",
+    "author": "wyq",
+    "version": "0.1.0",
+    "respository" : {
+        "type": "git",
+        "url": "https://github.com/leonopteryx130/js-matrix"
+    },
     "type": "module"
 }

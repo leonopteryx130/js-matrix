@@ -2,8 +2,6 @@
 import {TypeError} from './error.js'
 import { CheckArray } from './utils/utils.js'
 
-import { identityMatrix } from './apifunc/apifunc.js'
-
 class Vector{
 
 }
@@ -53,9 +51,4 @@ export class Matrix{
         */
         return [this.matrix.length, this.matrix[0].length]
     }
-}
-
-export default {
-    Matrix: Matrix,
-    identityMatrix :identityMatrix
 }
