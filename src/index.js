@@ -5,10 +5,11 @@ class Vector{
 
 }
 
-class Matrix{
+export class Matrix{
     constructor(arr) {
         this._validation(arr)
-        this.arr = arr
+        this.matrix = arr
+        this.shape = this._shape()
     }
 
     _validation(arr) {
@@ -44,12 +45,10 @@ class Matrix{
     }
 
     _shape() {
-        var shape = []
-        if(this.arr instanceof Array) {
-
-        }
+        /*
+        输出格式，第一个对应的是矩阵行数，第二个对应是矩阵列数
+        */
+        return [this.matrix.length, this.matrix[0].length]
     }
 
 }
-
-var data = new Matrix([[1, 2], [3]])
