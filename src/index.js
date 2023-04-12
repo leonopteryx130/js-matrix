@@ -7,7 +7,7 @@ class Vector{
 
 class Matrix{
     constructor(arr) {
-        this.varlidation = this._validation(arr)
+        this._validation(arr)
         this.arr = arr
     }
 
@@ -52,4 +52,4 @@ class Matrix{
 
 }
 
-var data = new Matrix([[1, 2], [3, 8]])
+var data = new Matrix([[1, 2], [3]])
