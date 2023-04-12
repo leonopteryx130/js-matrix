@@ -1,3 +1,5 @@
+import {TypeError} from './error.js'
+
 class Vector{
 
 }
@@ -9,11 +11,18 @@ class Matrix{
     }
 
     _validation(arr) {
+        /* 
+        验证输入是否为期望的数据类型（Array<Array>）
+
+        Validate parameters is of the expected type(Array<Array>) or not
+        */
         if(arr instanceof Array){
-            return
+            arr.map((item, index) => {
+
+            })
         }else{
-            const err = new Error('TypeError: Parameters of Matrix must be an Array<Array>')
-            console.log(err)
+            const err = new TypeError('Array<Array>', typeof(arr))
+            console.log(err.print())
         }
     }
 
