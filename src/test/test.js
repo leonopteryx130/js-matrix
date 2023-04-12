@@ -1,3 +1,3 @@
-import { identityMatrix } from "../apifunc/apifunc.js"
+import { zeroMatrix } from "../apifunc/apifunc.js"
 
-console.log(identityMatrix(5))
+console.log(zeroMatrix(5))

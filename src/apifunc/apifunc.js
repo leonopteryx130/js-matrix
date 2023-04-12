@@ -1,6 +1,6 @@
 import { Matrix } from "../matrix.js"
 
-export function identityMatrix(n) {
+function identityMatrix(n) {
     /*
     创建n维的单位矩阵
     */
@@ -14,4 +14,22 @@ export function identityMatrix(n) {
         result.push(arr)
     }
     return new Matrix(result)
+}
+
+function zeroMatrix(n) {
+    /*
+    创建全零矩阵
+    */
+    var result = []
+    for(let i=0; i<n; i++) {
+        var arr = new Array(n)
+        arr.fill(0)
+        result.push(arr)
+    }
+    return new Matrix(result)
+}
+
+export {
+    identityMatrix,
+    zeroMatrix
 }
