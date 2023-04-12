@@ -20,16 +20,33 @@ function zeroMatrix(n) {
     /*
     创建全零矩阵
     */
+    var arr = _fullXArray(0, n)
+    return new Matrix(arr)
+}
+
+function oneMatrix(n) {
+    /*
+    创建全1矩阵
+    */
+    var arr = _fullXArray(1, n)
+    return new Matrix(arr)
+}
+
+function _fullXArray(x, n) {
+    /*
+    创建全x矩阵，接口暂不开放
+    */
     var result = []
     for(let i=0; i<n; i++) {
         var arr = new Array(n)
-        arr.fill(0)
+        arr.fill(x)
         result.push(arr)
     }
-    return new Matrix(result)
+    return result
 }
 
 export {
     identityMatrix,
-    zeroMatrix
+    zeroMatrix,
+    oneMatrix
 }
