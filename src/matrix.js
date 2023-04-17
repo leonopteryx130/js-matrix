@@ -2,6 +2,8 @@
 import {TypeError} from './error.js'
 import { CheckArray } from './utils/utils.js'
 
+import { zeroMatrix } from './apifunc/apifunc.js'
+
 class Vector{
 
 }
@@ -13,7 +15,7 @@ export class Matrix{
         this.shape = this._shape()
     }
 
-    _validation(arr) {
+    static _validation(arr) {
         /* 
         验证输入是否为期望的数据类型（Array<Array>）
 
@@ -45,10 +47,22 @@ export class Matrix{
         }
     }
 
-    _shape() {
+    static _shape() {
         /*
         输出格式，第一个对应的是矩阵行数，第二个对应是矩阵列数
         */
         return [this.matrix.length, this.matrix[0].length]
+    }
+
+    add(x) {
+        /*
+        x是加法运算，运算符右边加数的值
+        */
+        zeroMatrix()
+        if(x instanceof Matrix) {
+            for(let i in this.matrix) {
+
+            }
+        }
     }
 }
