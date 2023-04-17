@@ -5,8 +5,8 @@ This tool is used to create matrix in Javascript, this package is in developing,
 
 ### **Install：**
 ```
-npm i @leonopteryx/js-matrix
-yarn add @leonopteryx/js-matrix
+npm i yq-jsmatrix
+yarn add yq-jsmatrix
 ```
 
 ### **Document：**
