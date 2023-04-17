@@ -15,7 +15,7 @@ export class Matrix{
         this.shape = this._shape()
     }
 
-    static _validation(arr) {
+    _validation(arr) {
         /* 
         验证输入是否为期望的数据类型（Array<Array>）
 
@@ -47,7 +47,7 @@ export class Matrix{
         }
     }
 
-    static _shape() {
+    _shape() {
         /*
         输出格式，第一个对应的是矩阵行数，第二个对应是矩阵列数
         */
@@ -58,16 +58,20 @@ export class Matrix{
         /*
         x是加法运算，运算符右边加数的值
         */
-        if(this.shape != x.shape ){
+        if(this.shape.toString() != x.shape.toString()){
             const err = new ShapeError()
             throw err.structured(this.shape, x.shape)
         }else if(!x instanceof Matrix) {
             const err = new TypeError()
             throw err.constructorError("Matrix")
         }else{
+            var result = zeroMatrix(...this.shape)
             for(let i in this.matrix) {
-                
+                for(let j in this.matrix[i]){
+                    result.matrix[i][j] = this.matrix[i][j] + x.matrix[i][j]
+                }
             }
         }
+        return result
     }
 }
