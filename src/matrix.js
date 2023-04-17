@@ -1,5 +1,5 @@
 
-import {TypeError} from './error.js'
+import { TypeError, ShapeError} from './error.js'
 import { CheckArray } from './utils/utils.js'
 
 import { zeroMatrix } from './apifunc/apifunc.js'
@@ -58,10 +58,15 @@ export class Matrix{
         /*
         x是加法运算，运算符右边加数的值
         */
-        zeroMatrix()
-        if(x instanceof Matrix) {
+        if(this.shape != x.shape ){
+            const err = new ShapeError()
+            throw err.structured(this.shape, x.shape)
+        }else if(!x instanceof Matrix) {
+            const err = new TypeError()
+            throw err.constructorError("Matrix")
+        }else{
             for(let i in this.matrix) {
-
+                
             }
         }
     }
