@@ -1,6 +1,6 @@
 
 import { TypeError, ShapeError} from './error.js'
-import { CheckArray } from './utils/utils.js'
+import { CheckArray, matrixAdd } from './utils/utils.js'
 
 import { zeroMatrix } from './apifunc/apifunc.js'
 
@@ -59,19 +59,15 @@ export class Matrix{
         x是加法运算，运算符右边加数的值
         */
         if(this.shape.toString() != x.shape.toString()){
+            //判断两矩阵shape是否一致
             const err = new ShapeError()
             throw err.structured(this.shape, x.shape)
         }else if(!x instanceof Matrix) {
+            //判断参数是否是Martix的实例
             const err = new TypeError()
             throw err.constructorError("Matrix")
         }else{
-            var result = zeroMatrix(...this.shape)
-            for(let i in this.matrix) {
-                for(let j in this.matrix[i]){
-                    result.matrix[i][j] = this.matrix[i][j] + x.matrix[i][j]
-                }
-            }
+            return new Matrix(matrixAdd(this.matrix, x.matrix)) 
         }
-        return result
     }
 }
