@@ -12,6 +12,8 @@ yarn add yq-jsmatrix
 ### **Document：**
 
 **Create Object：**
+
+You can use new key words to create a Matrix class, parameter of Matrix is an array which has two layers, the basic elements must be numbers, if it contains others type will report error.
 ```
 import jsMatrix from 'yq-jsmatrix'
 
