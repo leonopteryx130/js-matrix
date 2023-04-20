@@ -13,5 +13,8 @@ yarn add yq-jsmatrix
 
 **Create Object：**
 ```
+import jsMatrix from 'yq-jsmatrix'
 
+const arr = [[1, 3], [8, 7]]
+var myMatrix = new jsMatrix.Matrix(arr)
 ```
