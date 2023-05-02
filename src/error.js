@@ -20,8 +20,13 @@ export class TypeError extends BaseError{
         /*
         结构化输出
         */
-        console.log(this.statement)
+        console.error(this.statement)
         return this.header + "expected type " + avaliableType + ". But get " + realType
+    }
+
+    constructorError(typeName) {
+        console.error(this.statement)
+        return this.header + "parameters expected to an instance of " + typeName + "constructor"
     }
 
     customized(message) {
@@ -31,11 +36,31 @@ export class TypeError extends BaseError{
         console.error(this.statement)
         return this.header + message
     }
-
-    print(){
-        console.log(this.statement)
-        return "TypeError: expected type " + this.avaliableType + ". But get " + this.realType
-    }
 }
 
+
+export class ShapeError extends BaseError {
+    constructor() {
+        super()
+        this.header = "ShapeError: " //标识错误类型
+        this.structured = this.structured.bind(this)
+        this.customized = this.customized.bind(this)
+    }
+
+    structured(expectedShape, realShape) {
+        /*
+        结构化输出
+        */
+        console.log(this.statement)
+        return this.header + "expected shape " + expectedShape + ". But get " + realShape
+    }
+
+    customized(message) {
+        /*
+        自定义输出
+        */
+        console.error(this.statement)
+        return this.header + message
+    }
+}
 
