@@ -1,7 +1,7 @@
 {
     "name": "yq-jsmatrix",
     "author": "wyq",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "respository": {
         "type": "git",
         "url": "https://github.com/leonopteryx130/js-matrix"
