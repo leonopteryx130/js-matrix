@@ -2,6 +2,7 @@
 import { TypeError, ShapeError} from './error.js'
 import { CheckArray, matrixAdd, matrixTranspose } from './utils/utils.js'
 
+
 import { zeroMatrix } from './apifunc/apifunc.js'
 
 class Vector{
@@ -53,7 +54,6 @@ export class Matrix{
         */
         return [this.matrix.length, this.matrix[0].length]
     }
-
 
     add(x) {
         /*

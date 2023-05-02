@@ -12,6 +12,7 @@ function CheckArray(arr) {
 }
 
 function matrixAdd(matrixA, matrixB) {
+
     /*
         数据形式的矩阵相加，输入为两个同shape的数组，不需要数据类型和shape验证
     */
@@ -23,6 +24,7 @@ function matrixAdd(matrixA, matrixB) {
         }
     }
     return result
+
 }
 
 function matrixTranspose(matrix) {
