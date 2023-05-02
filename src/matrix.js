@@ -1,6 +1,6 @@
 
 import { TypeError, ShapeError} from './error.js'
-import { CheckArray, matrixAdd } from './utils/utils.js'
+import { CheckArray, matrixAdd, matrixTranspose } from './utils/utils.js'
 
 import { zeroMatrix } from './apifunc/apifunc.js'
 
@@ -70,6 +70,10 @@ export class Matrix{
         }else{
             return new Matrix(matrixAdd(this.matrix, x.matrix)) 
         }
+    }
+
+    transpose() {
+        return new Matrix(matrixTranspose(this.matrix))
     }
 }
 

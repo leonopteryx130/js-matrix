@@ -1,4 +1,6 @@
-export function CheckArray(arr) {
+import { zeroMatrix } from "../apifunc/apifunc.js"
+
+function CheckArray(arr) {
     /*
     通用方法：
     判断输入arr是否是一个由数字组成的数组
@@ -9,7 +11,7 @@ export function CheckArray(arr) {
     }): false
 }
 
-export function matrixAdd(matrixA, matrixB) {
+function matrixAdd(matrixA, matrixB) {
     /*
         数据形式的矩阵相加，输入为两个同shape的数组，不需要数据类型和shape验证
     */
@@ -21,4 +23,28 @@ export function matrixAdd(matrixA, matrixB) {
         }
     }
     return result
+}
+
+function matrixTranspose(matrix) {
+    /*
+    数组形式的矩阵转置
+    */
+    const M = matrix.length
+    const N = matrix[0].length
+
+    //这么写运行效率会受一定影响
+    let res = zeroMatrix(N, M).matrix
+    
+    for(let i=0;i<M;i++){
+        for(let j=0;j<N;j++){
+            res[j][i] = matrix[i][j]
+        }
+    }
+    return res
+}
+
+export {
+    CheckArray,
+    matrixAdd,
+    matrixTranspose
 }
