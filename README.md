@@ -9,7 +9,7 @@ npm i yq-jsmatrix
 yarn add yq-jsmatrix
 ```
 
-### **Document：**
+### **Quick Start：**
 
 **Create Object：**
 
@@ -22,7 +22,27 @@ import jsMatrix from 'yq-jsmatrix'
 const arr = [[1, 3], [8, 7]]
 var myMatrix = new jsMatrix.Matrix(arr)
 ```
+If you want to get the transposed matrix, you can try:
+```
+myMatrix.transpose()
+```
 
 **api functions**
 
-Package supplied some apis for developers to create Matrix more convenient. You can try 
+Package supplied some apis for developers to create Matrix more convenient. 
+
+You can try:
+```
+var zerosMatrix = jsMatrix.zeroMatrix(3, 4)
+```
+This api create a matrix function filled with zeros, parameters stand for the shape you expected.
+
+result:
+```
+Matrix {
+  matrix: [ [ 0, 0, 0, 0 ], [ 0, 0, 0, 0 ], [ 0, 0, 0, 0 ] ],
+  shape: [ 3, 4 ]
+}
+```
+You can also try ```oneMatrix()``` to create a matrix filled with ones by the same method. And ```identityMatrix()``` api allows you to create an identity matrix.
+
