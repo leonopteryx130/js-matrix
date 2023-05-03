@@ -1,6 +1,7 @@
 
 import { TypeError, ShapeError} from './error.js'
-import { CheckArray, matrixAdd, matrixTranspose } from './utils/utils.js'
+import { matrixAdd, matrixMinus, matrixTranspose } from './utils/utils.js'
+import { checkIsMatrixArray } from './utils/inspect.js'
 
 
 import { zeroMatrix } from './apifunc/apifunc.js'
@@ -31,10 +32,10 @@ export class Matrix{
                 if(subArrayLength === null) {
                     //遍历第一个主数组的时候会保存长度，其后每个子数组都必须和第一个数组长度一样
                     subArrayLength = item.length
-                    return true && CheckArray(item)
+                    return true && checkIsMatrixArray(item)
                 }else {
                     //如果子数组和第一个数组的长度一样，并且是由数字组成的Array，那么久返回true
-                    return item.length === subArrayLength && CheckArray(item)
+                    return item.length === subArrayLength && checkIsMatrixArray(item)
                 }
             })
             if(!result) {
@@ -72,7 +73,27 @@ export class Matrix{
         }
     }
 
+    minus(x) {
+        /*
+        x是减法运算，运算符右边加数的值
+        */
+        if(this.shape.toString() != x.shape.toString()){
+            //判断两矩阵shape是否一致
+            const err = new ShapeError()
+            throw err.structured(this.shape, x.shape)
+        }else if(!x instanceof Matrix) {
+            //判断参数是否是Martix的实例
+            const err = new TypeError()
+            throw err.constructorError("Matrix")
+        }else{
+            return new Matrix(matrixMinus(this.matrix, x.matrix)) 
+        }
+    }
+
     transpose() {
+        /*
+        矩阵转置
+        */
         return new Matrix(matrixTranspose(this.matrix))
     }
 }
